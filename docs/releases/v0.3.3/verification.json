@@ -1,0 +1,35 @@
+{
+  "version": "0.3.3",
+  "version_code": 6,
+  "apk": "DepthSketch-0.3.3-android.apk",
+  "bytes": 226803409,
+  "sha256": "29408201b0d02cc37f4da878cb455ec4433702a4b1dab6d006f9131e58fdaa1d",
+  "signature_v2": true,
+  "abis": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86_64"
+  ],
+  "lint_errors": 0,
+  "lint_warnings": 21,
+  "checks": {
+    "direct_material_real_depth_alpha_history_project": {
+      "result": "PASS",
+      "log": "materials-0.3.3.txt"
+    },
+    "freehand_editor": {
+      "result": "PASS",
+      "log": "instrumentation-0.3.3.txt"
+    },
+    "interactive_segmentation_and_wallpaper": {
+      "result": "PASS",
+      "log": "additions-0.3.3.txt"
+    }
+  },
+  "test_environment": "Dedicated Android x86_64 emulator; no editor-mutating tests on the user's phone.",
+  "behavior": [
+    "Prepared material preserves the decoded image canvas, exact alpha and disconnected components, with feather=0 by default.",
+    "Opaque input remains a complete rectangle. Segmentation is skipped; real depth inference is still performed.",
+    "Fully transparent input is rejected; the existing shared decoder limits the long edge to 1536 pixels."
+  ]
+}
